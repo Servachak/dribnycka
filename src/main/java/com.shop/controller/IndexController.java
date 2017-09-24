@@ -20,12 +20,14 @@ public class IndexController {
     public String getRegistration(){
         return "registration";
     }
+
     @PostMapping("/registration")
     public String setRegistration(@RequestParam String name,
                                   @RequestParam String email,
-                                  @RequestParam String password,
+                                  @RequestParam String pass,
                                   @RequestParam String phoneNumber){
 
-        return  "redirect:/registration";
+        System.out.println(name + " name");
+        return  "redirect:/";
     }
 }

@@ -17,7 +17,7 @@
     <h2>Very simple login/registration form</h2>
 
     <div class="form">
-    <form action="/registration" method="post"></form>>
+    <form action="/registration" method="post">
         <h1>Welcome!</h1>
         <ul>
             <li>
@@ -28,7 +28,7 @@
                     <p>Your Name: <input type="text" name="name" placeholder="Enter name" /></p>
                     <p>Password:  <input type="password"  name="password" placeholder="Enter password" /></p>
 
-                    <input type="button" value="Log me in!" />
+                    <input type="submit" value="Log me in!" />
                     <br/>
 
                 </div>
@@ -40,11 +40,11 @@
                 <div class="sub">
                     <p>Name: <input type="text" name="name" placeholder="Enter name" /></p>
                     <p>Email: <input type="text"name="email" placeholder="Enter email" />
-                    <p> Pass: <input type="password" name="password" placeholder="Enter password" /></p>
+                    <p> Pass: <input type="password" name="pass" placeholder="Enter password" /></p>
                     <p>Phone: <input type="text" name="phoneNumber" placeholder="+380988888888" />
                         <br/>
                         <br />
-                        <input type="button" value="Join!" />
+                        <input type="submit" value="Join!" />
                 </div>
             </li>
         </ul>

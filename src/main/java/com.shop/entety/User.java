@@ -10,7 +10,7 @@ import java.util.List;
 /**Анотація Entity вказує на те що цей клас е сутністю**/
 @Entity
 /** --- @Table --- Дає можливість самим назвати свою таблицю**/
-@Table(name = "Покупці")
+//@Table(name = "Покупці")
 public class User {
 
     @Id   /** Вказує що дане поле є унікальним визначником**/
@@ -22,8 +22,8 @@ public class User {
     private String password;
     private String phoneNumber;
 
-//    @OneToMany(mappedBy = "user")
-//    private List<Dress> dressList = new ArrayList<>();
+   @OneToMany(mappedBy = "user")
+    private List<Dress> dressList = new ArrayList<>();
     public User() {
 
     }

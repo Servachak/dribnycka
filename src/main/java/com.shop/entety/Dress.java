@@ -4,8 +4,10 @@ import javax.persistence.*;
 
 /**
  * Created by adavi on 01.09.2017.
- */@Entity
-@Table(name = "Плаття")
+ */
+
+
+@Entity
 public class Dress extends Goods {
 
     @Id

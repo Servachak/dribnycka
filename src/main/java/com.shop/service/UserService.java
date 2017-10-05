@@ -1,6 +1,6 @@
 package com.shop.service;
 
-import com.shop.entety.User;
+import com.shop.entity.User;
 
 import java.util.List;
 

@@ -1,16 +1,18 @@
 package com.shop.serviceImpl;
 
 import com.shop.dao.DressDAO;
-import com.shop.entety.Dress;
+import com.shop.entity.Dress;
 import com.shop.service.DressService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by adavi on 25.09.2017.
  */
-public class DressImpl implements DressService {
+@Service
+public class DressServiceImpl implements DressService {
 
     @Autowired
     private DressDAO dressDAO;
@@ -44,6 +46,6 @@ public class DressImpl implements DressService {
 
     @Override
     public Dress findByName(String name) {
-        return dressDAO.findBYName(name);
+        return dressDAO.findByName(name);
     }
 }

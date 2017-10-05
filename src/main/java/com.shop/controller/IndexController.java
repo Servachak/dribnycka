@@ -2,8 +2,6 @@ package com.shop.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Created by adavi on 21.09.2017.
@@ -16,18 +14,5 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping("/registration")
-    public String getRegistration(){
-        return "registration";
-    }
 
-    @PostMapping("/registration")
-    public String setRegistration(@RequestParam String name,
-                                  @RequestParam String email,
-                                  @RequestParam String pass,
-                                  @RequestParam String phoneNumber){
-
-        System.out.println(name + " name");
-        return  "redirect:/";
-    }
 }

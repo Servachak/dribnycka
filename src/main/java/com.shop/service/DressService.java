@@ -1,15 +1,14 @@
 package com.shop.service;
 
-import com.shop.entety.Dress;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.shop.entity.Dress;
+
 
 import java.util.List;
 
 /**
  * Created by adavi on 25.09.2017.
  */
-@Service
+
 public interface DressService {
 
     void save(Dress dress) throws Exception;

@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="dribnychka" />
         <module name="dribnycka" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="dribnychka" target="1.8" />
       <module name="dribnycka" target="1.8" />
     </bytecodeTargetLevel>
   </component>

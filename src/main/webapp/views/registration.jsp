@@ -5,7 +5,8 @@
   Time: 23:12
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <title>Title</title>
@@ -14,8 +15,6 @@
 </head>
 <body>
 <center>
-    <h2>Very simple login/registration form</h2>
-
     <div class="form">
     <form action="/registration" method="post">
         <h1>Welcome!</h1>
@@ -51,5 +50,15 @@
     </form>
     </div>
 </center>
+<ol>
+    <div style="text-align: center">
+        <c:forEach var="user" items="${listUser}">
+            <li>${user.name} ${user.email} ${user.password} ${user.phoneNumber}
+            <a href="deleteUser/${user.id}">delete</a>
+            <a href="updateUser/${user.id}">update</a>
+            </li>
+        </c:forEach>
+    </div>
+</ol>
 </body>
 </html>

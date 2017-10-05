@@ -1,4 +1,4 @@
-package com.shop.entety;
+package com.shop.entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -24,6 +24,10 @@ public class User {
 
    @OneToMany(mappedBy = "user")
     private List<Dress> dressList = new ArrayList<>();
+
+   @OneToMany(mappedBy = "user")
+   private List<Orders> ordersList = new ArrayList<>();
+
     public User() {
 
     }

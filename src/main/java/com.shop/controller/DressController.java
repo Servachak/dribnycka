@@ -23,7 +23,7 @@ public class DressController {
         public String getDress(Model model){
 
         model.addAttribute("listDress",dressService.findAll());
-            return "dress";
+            return "views-admin-dress";
         }
 
     @PostMapping("/dress")
@@ -52,7 +52,7 @@ public class DressController {
     public  String updateDress(@PathVariable int id, Model model){
         Dress dress = dressService.findOne(id);
         model.addAttribute("currentDress", dress);
-        return "updateDress";
+        return "views-admin-updateDress";
     }
 
     @PostMapping("/updateDress/{id}")

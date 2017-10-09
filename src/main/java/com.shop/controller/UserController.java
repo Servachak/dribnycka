@@ -20,7 +20,7 @@ public class UserController {
     @GetMapping("/registration")
     public String getRegistration(Model model){
         model.addAttribute("listUser", userService.findAll());
-        return "registration";
+        return "views-user-registration";
     }
 
     @PostMapping("/registration")
@@ -49,7 +49,7 @@ public class UserController {
         User user = userService.findOne(id);
         model.addAttribute("currentUser",user);
 
-        return "updateUser";
+        return "views-user-updateUser";
     }
     @PostMapping("/updateUser/{id}")
     public  String updateUser(@RequestParam String name,

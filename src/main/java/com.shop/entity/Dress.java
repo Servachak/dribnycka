@@ -17,7 +17,7 @@ public class Dress extends Goods {
 
 
     @ManyToOne()
-     private User user;
+    private User user;
 
     @ManyToOne()
     private Orders orders;

@@ -1,6 +1,8 @@
 package com.shop.controller;
 
+
 import com.shop.entity.User;
+
 import com.shop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,13 +43,13 @@ public class UserController {
     @GetMapping("deleteUser/{id}")
     public String deleteUser(@PathVariable int id){
         userService.delete(id);
-        return "redirect:/registration";
+        return "redirect:/";
     }
     @GetMapping("/updateUser/{id}")
     public String updateUser(@PathVariable int id,Model model){
 
-        User user = userService.findOne(id);
-        model.addAttribute("currentUser",user);
+
+        model.addAttribute("currentUser",userService.findOne(id));
 
         return "views-user-updateUser";
     }
@@ -71,7 +73,7 @@ public class UserController {
             e.printStackTrace();
         }
 
-        return  "redirect:/registration";
+        return  "redirect:/";
     }
 
 }

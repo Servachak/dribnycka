@@ -22,11 +22,11 @@ public class User {
     private String password;
     private String phoneNumber;
 
-   @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user")
     private List<Dress> dressList = new ArrayList<>();
 
-   @OneToMany(mappedBy = "user")
-   private List<Orders> ordersList = new ArrayList<>();
+    @OneToMany(mappedBy = "user")
+    private List<Orders> ordersList = new ArrayList<>();
 
     public User() {
 

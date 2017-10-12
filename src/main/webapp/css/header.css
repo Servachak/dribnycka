@@ -4,32 +4,35 @@
     background-color: darkgrey;
     margin-left: 15%;
     margin-right: 15%;
-    margin-bottom: 5%;
-
-
+    margin-bottom: 1%;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px 0px grey;
 }
-.pages{
 
-
-
-}
 ul{
-    width:100px;
     list-style: none;
-
 }
+
 a:hover{
     color: darkslategrey;
     text-decoration: none;
-
 }
+
 li{
     display: inline-block;
 }
+
 li a{
 
     display: inline-block;
     text-decoration: none;
     padding: 5px;
     border: 1px solid #ccc;
+}
+
+.flex_container{
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 40pt;
+    flex-wrap: wrap;
 }

@@ -1,0 +1,9 @@
+.main{
+    height: 1000px;
+    background-color: grey;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    box-shadow:5px 5px 10px 0px grey;
+}

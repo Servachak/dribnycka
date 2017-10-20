@@ -28,14 +28,13 @@ public class DressController {
 
     @PostMapping("/dress")
     public String getDress(@RequestParam String dressName,
-                           @RequestParam String dressColor,
                            @RequestParam String dressType,
                            @RequestParam String dressSex,
                            @RequestParam String dressSize
     ){
 
         try {
-            dressService.save(new Dress(dressName,dressColor,dressType,dressSex,dressSize));
+            dressService.save(new Dress(dressName,dressType,dressSex,dressSize));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -58,7 +57,6 @@ public class DressController {
     @PostMapping("/updateDress/{id}")
     public String updateDress(@PathVariable int id,
                               @RequestParam String dressName,
-                              @RequestParam String dressColor,
                               @RequestParam String dressType,
                               @RequestParam String dressSex,
                               @RequestParam String dressSize){
@@ -66,7 +64,6 @@ public class DressController {
         Dress dress = dressService.findOne(id);
 
         dress.setName(dressName);
-        dress.setColor(dressColor);
         dress.setType(dressType);
         dress.setSex(dressSex);
         dress.setSize(dressSize);

@@ -5,6 +5,7 @@
      <ul >
         <li class="flex_element"><a href="/registration">registration</a></li>
         <li class="flex_element"><a href="/dress">dress</a></li>
+        <li class="flex_element"><a href="/color">color</a></li>
      </ul>
    </div>
 </div>

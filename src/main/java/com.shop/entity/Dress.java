@@ -1,6 +1,8 @@
 package com.shop.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by adavi on 01.09.2017.
@@ -12,9 +14,10 @@ public class Dress extends Goods {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    private  int id;
 
-
+    @OneToMany(mappedBy = "dress")
+    private List<Color> listColorName = new ArrayList<>();
 
     @ManyToOne()
     private User user;
@@ -33,8 +36,9 @@ public class Dress extends Goods {
     public Dress() {
     }
 
-    public Dress(String name, String color, String type, String sex, String size) {
-        super(name, color, type, sex, size);
+    public Dress(String name, String type, String sex, String size) {
+        super(name, type, sex, size);
+
     }
 
     @Override

@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface DressService {
 
-    void save(Dress dress) throws Exception;
+    void save(Dress dress, int color) throws Exception;
 
     List<Dress> findAll();
 
@@ -22,6 +22,10 @@ public interface DressService {
     void update(Dress dress) throws Exception;
 
     Dress findByName(String name);
+
+    Dress findDressWithColor(int colorId);
+
+
 
 //    Page<Dress> findAllPages(Pageable pageable);
 }

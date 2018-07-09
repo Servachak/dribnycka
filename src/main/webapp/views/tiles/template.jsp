@@ -9,8 +9,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    
+    <title>Dribnychka.com</title>
+
     <link href="/css/index.css" rel="stylesheet" type="text/css">
+
     <script src="/js/jquery-3.2.1.min.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -21,9 +23,10 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
+<div class="body">
 <div><tiles:insertAttribute name="header"/></div>
 <div><tiles:insertAttribute name="body"/></div>
 <div><tiles:insertAttribute name="footer"/></div>
-
+</div>
 </body>
 </html>

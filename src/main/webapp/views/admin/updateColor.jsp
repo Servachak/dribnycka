@@ -9,7 +9,7 @@
 
 <div style="text-align: center">
     <form action="/updateColor/${currentColor.id}"method="post">
-        <input type="text", name="colorName",value="${currentColor.colorName}">
+        <input type="text", name="colorName", value="${currentColor.colorName}">
         <br>
         <button>update</button>
     </form>

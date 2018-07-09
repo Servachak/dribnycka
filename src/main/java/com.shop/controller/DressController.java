@@ -1,6 +1,7 @@
 package com.shop.controller;
 
 import com.shop.entity.Dress;
+import com.shop.service.ColorService;
 import org.springframework.ui.Model;
 import com.shop.service.DressService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +19,14 @@ public class DressController {
 
     @Autowired
     private DressService dressService;
+    @Autowired
+    private ColorService colorService;
 
     @GetMapping("/dress")
         public String getDress(Model model){
 
         model.addAttribute("listDress",dressService.findAll());
+        model.addAttribute("listColor",colorService.findAll());
             return "views-admin-dress";
         }
 
@@ -30,11 +34,11 @@ public class DressController {
     public String getDress(@RequestParam String dressName,
                            @RequestParam String dressType,
                            @RequestParam String dressSex,
-                           @RequestParam String dressSize
-    ){
+                           @RequestParam String dressSize,
+                           @RequestParam int color){
 
         try {
-            dressService.save(new Dress(dressName,dressType,dressSex,dressSize));
+            dressService.save(new Dress(dressName,dressType,dressSex,dressSize), color);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -51,6 +55,7 @@ public class DressController {
     public  String updateDress(@PathVariable int id, Model model){
         Dress dress = dressService.findOne(id);
         model.addAttribute("currentDress", dress);
+        model.addAttribute("listColor",colorService.findAll());
         return "views-admin-updateDress";
     }
 

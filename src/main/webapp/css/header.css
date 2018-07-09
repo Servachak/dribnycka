@@ -23,16 +23,18 @@ li{
 }
 
 li a{
-
     display: inline-block;
     text-decoration: none;
     padding: 5px;
     border: 1px solid #ccc;
+    border-radius: 2px;
+    background-color: #777777;
+    color: #a6e1ec;
 }
 
 .flex_container{
     display: flex;
     flex-direction: row-reverse;
-    padding-right: 40pt;
+    padding-right: 40px;
     flex-wrap: wrap;
 }

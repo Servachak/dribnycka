@@ -16,14 +16,38 @@ public class Dress extends Goods {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int id;
 
-    @OneToMany(mappedBy = "dress")
-    private List<Color> listColorName = new ArrayList<>();
+    @ManyToOne
+    private Color color;
 
     @ManyToOne()
     private User user;
 
     @ManyToOne()
     private Orders orders;
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Orders getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Orders orders) {
+        this.orders = orders;
+    }
 
     public int getId() {
         return id;

@@ -12,6 +12,7 @@
 
 
     <mvc:annotation-driven/>
+    <mvc:resources mapping="/bootstrap/**" location="/bootstrap/"/>
     <mvc:resources mapping="/css/**" location="/css/"/>
     <mvc:resources mapping="/js/**" location="/js/"/>
 
@@ -26,7 +27,7 @@
             </list>
         </property>
     </bean>
-    <mvc:resources mapping="/img/**" location="/img/"/>
+    <mvc:resources mapping="/image/**" location="/image/"/>
 
 
     <mvc:resources mapping="/resources/**" location="file:${catalina.home}/resources/"/>
@@ -71,6 +72,6 @@
             </bean>
         </mvc:argument-resolvers>
     </mvc:annotation-driven>
-    <!--<mvc:resources mapping="/css/**" location="/css/"/>-->
+
 
 </beans>

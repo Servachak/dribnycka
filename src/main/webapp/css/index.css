@@ -1,9 +1,16 @@
 .main{
     height: 1000px;
-    background-color: grey;
+    background-color:rgba(128, 128, 128, 0.6);
     margin-left: 15%;
     margin-right: 15%;
     margin-bottom: 5px;
     border-radius: 4px;
     box-shadow:5px 5px 10px 0px grey;
 }
+body{
+    background-image: url("/image/542baafbe8ddinners.jpg");
+    background-size: 100%, 100%;
+
+
+}
+

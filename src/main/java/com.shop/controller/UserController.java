@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
+
 /**
  * Created by adavi on 29.09.2017.
  */
@@ -22,7 +24,7 @@ public class UserController {
     @GetMapping("/registration")
     public String getRegistration(Model model){
         model.addAttribute("listUser", userService.findAll());
-        return "views-user-registration";
+        return "views-users-registration";
     }
 
     @PostMapping("/registration")
@@ -38,21 +40,24 @@ public class UserController {
             e.printStackTrace();
         }
 
-        return  "redirect:/";
+        return  "redirect:/registration";
     }
+
     @GetMapping("deleteUser/{id}")
     public String deleteUser(@PathVariable int id){
         userService.delete(id);
-        return "redirect:/";
+        return "redirect:/registration";
     }
+
     @GetMapping("/updateUser/{id}")
     public String updateUser(@PathVariable int id,Model model){
 
 
         model.addAttribute("currentUser",userService.findOne(id));
 
-        return "views-user-updateUser";
+        return "views-users-updateUser";
     }
+
     @PostMapping("/updateUser/{id}")
     public  String updateUser(@RequestParam String name,
                               @RequestParam String email,
@@ -73,7 +78,26 @@ public class UserController {
             e.printStackTrace();
         }
 
-        return  "redirect:/";
+        return  "redirect:/registration";
+    }
+    @GetMapping("/login")
+    private String loginGet(){
+        return "views-base-index";
+    }
+    @PostMapping("/login")
+    private String loginPost(){
+        return "views-base-index";
+    }
+
+    @PostMapping("/logout")
+    public  String logout(){
+        return "redirect:/";
+    }
+
+    @GetMapping("/profile")
+    public String profile(Principal principal, Model model){
+        model.addAttribute("user", userService.findOne(Integer.valueOf(principal.getName())));
+        return "views-user-profile";
     }
 
 }

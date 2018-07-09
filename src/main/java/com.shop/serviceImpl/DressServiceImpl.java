@@ -1,6 +1,8 @@
 package com.shop.serviceImpl;
 
+import com.shop.dao.ColorDAO;
 import com.shop.dao.DressDAO;
+import com.shop.entity.Color;
 import com.shop.entity.Dress;
 import com.shop.service.DressService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +18,21 @@ public class DressServiceImpl implements DressService {
 
     @Autowired
     private DressDAO dressDAO;
+    @Autowired
+    private ColorDAO colorDAO;
 
     @Override
-    public void save(Dress dress) throws Exception{
+    public void save(Dress dress, int colorId) throws Exception{
+
+        Color color = colorDAO.findOne(colorId);
+
+        dressDAO.saveAndFlush(dress);
+
+        dress.setColor(color);
+
         dressDAO.save(dress);
+
+
     }
 
     @Override
@@ -48,4 +61,11 @@ public class DressServiceImpl implements DressService {
     public Dress findByName(String name) {
         return dressDAO.findByName(name);
     }
+
+    public Dress findDressWithColor(int id){
+        return dressDAO.findDressWithColor(id);
+    }
+
+
+
 }

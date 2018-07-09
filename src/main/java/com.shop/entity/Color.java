@@ -1,6 +1,8 @@
 package com.shop.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by adavi on 20.10.2017.
@@ -12,19 +14,22 @@ public class Color {
     private int id;
 
     private String colorName;
-    @ManyToOne
-    private Dress dress;
 
-    public Dress getDress() {
-        return dress;
-    }
+    @OneToMany(mappedBy = "color")
+    private List<Dress> dressList = new ArrayList<>();
 
-    public void setDress(Dress dress) {
-        this.dress = dress;
-    }
+
 
     public Color() {
 
+    }
+
+    public List<Dress> getDressList() {
+        return dressList;
+    }
+
+    public void setDressList(List<Dress> dressList) {
+        this.dressList = dressList;
     }
 
     public Color(String colorName) {

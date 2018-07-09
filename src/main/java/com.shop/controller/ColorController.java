@@ -21,7 +21,7 @@ public class ColorController {
 
     @GetMapping("/color")
     public  String color(Model model){
-        model.addAttribute("colorList",colorService.findAll());
+        model.addAttribute("listColor",colorService.findAll());
         return "views-admin-color";
     }
 
